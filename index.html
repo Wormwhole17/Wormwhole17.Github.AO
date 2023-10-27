@@ -1,0 +1,113 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>A quick presentation of myself</h1>
+    <h2><i>Who am I?</i></h2>
+    <p>
+        <ul>
+            <li>I am <b><u>Louise Mubalama</u></b>.
+                <span class="text-image-appear" onmouseenter="showImage('me.jpg', this)"
+                    onmouseleave="deleteImage('me.jpg', this)">
+                    Here is a picture of me </span></li><br>
+
+            <li>I was born on the <u>17th of January 2006</u> in Grenoble, France.</li><br>
+
+            <li>My dad is Congolese from DRC, his name is John and he was born on the 18th of Semptember 1974. <br>
+                My mom is French, her name is Sandrine and she was born on the 1st of June 1978. .</li><br>
+
+            <li>I speak both french and english.</li><br>
+
+            <li> I have the most amazing boyfriend named <u><b>Oscar</u></b>, he likes coding and
+                <span class="text-image-appear" onmouseenter="showImage('OSCAR.jpg', this)"
+                    onmouseleave="deleteImage('OSCAR.jpg', this)">
+                    he is VERY CUTE. </span></li><br>
+            <!-- <br><img src="OSCAR.JPG" alt="picture of Oscar"></li> -->
+
+            <li>I live in <u>Dakar, Sénégal</u> and I am in 12th grade</li><br>
+        </ul>
+
+    </p>
+    <h2><i>My hobbies include:</i></h2>
+    <div id="hobbies">
+        <div>
+            <ul>
+                <li>
+                    <span class="text-image-appear hobbies-text" onmouseenter="showImage('vif.jpg', this)"
+                        onmouseleave="deleteImage('vif.jpg', this)">
+                        Horseridding </span>
+                </li><br><br>
+                <!-- <br><img src="vif.JPG" alt="picture of vif"> -->
+
+                <li>
+                    <span class="text-image-appear hobbies-text" onmouseenter="showImage('drawing.jpg', this)"
+                        onmouseleave="deleteImage('drawing.jpg', this)">
+                        Drawing and making art </span>
+                </li><br><br>
+                <!-- Drawing and making art <br><img src="drawing.jpg" alt="drawing"></li> -->
+
+                <li>
+                    <span class="text-image-appear hobbies-text" onmouseenter="showImage('oscar 2.jpg', this)"
+                        onmouseleave="deleteImage('oscar 2.jpg', this)">
+                        Spending time with Oz :) </span>
+                    <!-- Spending time with Oscar <br><img src="oscar 2.jpg" alt="oscar"> -->
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <span class="text-image-appear hobbies-text" onmouseenter="showImage('pic.jpg', this)"
+                        onmouseleave="deleteImage('pic.jpg', this)">
+                        Taking pictures </span>
+                    <!-- Taking pictures <br><img src="pic.jpg" alt="picture"> -->
+                </li><br><br>
+                <li>
+                    <span class="text-image-appear hobbies-text" onmouseenter="showImage('tiny.jpg', this)"
+                        onmouseleave="deleteImage('tiny.jpg', this)">
+                        Playing with my cat, Tiny</span>
+                    <!-- Playing with my cat <br><img src="tiny.jpg" alt="cats">  -->
+                </li><br><br>
+                <li>
+                    <span class="text-image-appear hobbies-text" onmouseenter="showImage('plane.jpg', this)"
+                        onmouseleave="deleteImage('plane.jpg', this)">
+                        Traveling around the globe!</span>
+                    <!-- Traveling <br><img src="plane.jpg" alt="traveling"> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="text-image-appear love-text" onmouseenter="showImage('I love Oz.jpg', this)"
+    onmouseleave="deleteImage('I love Oz.jpg', this)">  
+        I LOVE OSCAR
+    </h2>
+
+    <script>
+        function showImage(imagename, element) {
+            if (element.children.length > 0) {
+                return
+            }
+
+            let img = document.createElement("img");
+            let br = document.createElement("br")
+            img.setAttribute("src", imagename);
+            element.appendChild(br);
+            element.appendChild(img);
+        }
+
+        function deleteImage(imagename, element) {
+                if(element.children.length === 0) {
+                    return;
+                }
+
+                setTimeout(() => {
+                    if(element.lastChild.getAttribute("src") === imagename) {
+                        element.lastChild.remove();
+                        element.lastChild.remove();
+                    }
+                }, 250);
+            }
+    </script>
+</body>
